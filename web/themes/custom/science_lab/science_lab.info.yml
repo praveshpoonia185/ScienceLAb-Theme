@@ -1,0 +1,20 @@
+name: Science Lab
+description: 'Our Super Cool Science Lab Theme'
+type: theme
+core_version_requirement: ^9 || ^10
+version: VERSION
+base theme: claro
+screenshot: science_lab.png
+libraries:
+  - science_lab/global-style
+
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'

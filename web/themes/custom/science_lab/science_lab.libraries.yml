@@ -1,0 +1,28 @@
+global-style:
+  version: VERSION
+  css:
+    theme:
+      https://fonts.googleapis.com/css?family=Roboto: { type: external }
+      css/navbar.css: {}
+      css/banner.css: {}
+  js:
+    js/banner.js: {}
+    
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+
+slick:
+  css:
+    theme:
+      node_modules/slick-carousel/slick/slick.css: {}
+  js:
+    node_modules/slick-carousel/slick/slick.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+custom-code-banner:
+  js:
+    js/banner.js: {}
