@@ -31,7 +31,7 @@
  * - page.header: Items for the header region.
  * - page.pre_content: Items for the pre-content region.
  * - page.breadcrumb: Items for the breadcrumb region.
- * - page.highlighted: Items for the highlighted region.
+ * - page.highlighted: Items for the highmain_footerlighted region.
  * - page.help: Dynamic help text, mostly for admin pages.
  * - page.content: The main content of the current page.
  *
@@ -39,18 +39,33 @@
  * @see html.html.twig
  */
 #}
-  <header>
-      {{ page.breadcrumb }}
-      {{ page.header }}
-  </header>  
-    {{ page.pre_content }}
-    <main role="main">
-      <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
-      {{ page.highlighted }}
-      {% if page.help %}
-        <div class="help">
-          {{ page.help }}
-        </div>
-      {% endif %}
-      {{ page.content }}
-    </main>
+<header>
+	{{ page.breadcrumb }}
+	{{ page.header }}
+</header>
+{{ page.pre_content }}
+<main role="main">
+	<div class="visually-hidden">
+		<a id="main-content" tabindex="-1"></a>
+	</div>
+	{{ page.highlighted }}
+	{% if page.help %}
+		<div class="help">
+			{{ page.help }}
+		</div>
+	{% endif %}
+	{{ page.content }}
+
+	<footer class="main_footer" role="footer">
+		{{ page.footer_top }}
+		{{ page.footer_bottom }}
+
+		<div class="copyright">
+			<p>
+				© {{ "now"|date("Y") }} {{ site_name }}.
+
+        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">Privacy Policy</a>
+			</p>
+		</div>
+	</footer>
+</main>

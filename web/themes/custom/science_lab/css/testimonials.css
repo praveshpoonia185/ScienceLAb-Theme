@@ -1,0 +1,77 @@
+.testimonials {
+  margin: 100px 0;
+  background: #f4f4f4;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 100px 0;
+}
+.testimonials .testimonials_slider {
+  max-width: 1320px;
+  margin: auto;
+}
+.testimonials .testimonials_slider .testimonial_one {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  position: relative;
+  margin-top: 70px;
+}
+.testimonials .testimonials_slider .testimonial_one::before {
+  content: "";
+  position: absolute;
+  left: 65px;
+  top: -60px;
+  width: 105px;
+  height: 99px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://livedemo00.template-help.com/drupal_54831/sites/all/themes/theme1003/images/quote.png");
+}
+.testimonials .testimonials_slider .testimonial_one .testimonial_image {
+  width: 110px;
+}
+.testimonials .testimonials_slider .testimonial_one .testimonial_image img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+.testimonials .testimonials_slider .testimonial_one .testimonials__info {
+  width: 725px;
+}
+.testimonials .testimonials_slider .testimonial_one .testimonials__info p {
+  color: #63696b;
+  font-size: 18px;
+  margin: 0;
+}
+.testimonials .testimonials_slider .testimonial_one .testimonials__info h3 {
+  margin: 0;
+  padding-top: 24px;
+  color: #ff6600;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 100;
+}
+.testimonials .slick-dots {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem 0;
+  list-style-type: none;
+}
+.testimonials .slick-dots li {
+  margin: 0 0.25rem;
+}
+.testimonials .slick-dots button {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border: none;
+  border-radius: 100%;
+  background-color: orange;
+  text-indent: -9999px;
+}
+.testimonials .slick-dots li.slick-active button {
+  background-color: red;
+}

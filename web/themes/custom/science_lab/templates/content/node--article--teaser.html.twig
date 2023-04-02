@@ -67,6 +67,9 @@
  *
  */
 #}
+
+{% set summary = content.body|render|striptags %}
+
 {%
   set classes = [
     'node',
@@ -80,40 +83,64 @@
 {{ attach_library('claro/classy.node') }}
 <article{{attributes.addClass(classes)}}>
 	{# 
-	  {{ title_prefix }}
-	  {% if label and not page %}
-	    <h2{{ title_attributes }}>
-	      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-	    </h2>
-	  {% endif %}
-	  {{ title_suffix }}
+		{{ title_prefix }}
+		{% if label and not page %}
+		  <h2{{ title_attributes }}>
+		    <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+		  </h2>
+		{% endif %}
+		{{ title_suffix }}
 	
-	  {% if display_submitted %}
-	    <footer class="node__meta">
-	      {{ author_picture }}
-	      <div{{ author_attributes.addClass('node__submitted') }}>
-	        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-	        {{ metadata }}
-	      </div>
-	    </footer>
-	  {% endif %} #}
+		{% if display_submitted %}
+		  <footer class="node__meta">
+		    {{ author_picture }}
+		    <div{{ author_attributes.addClass('node__submitted') }}>
+		      {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+		      {{ metadata }}
+		    </div>
+		  </footer>
+		{% endif %} #}
 
-	<div{{content_attributes.addClass('node__content').addClass('welcome_card')}}>
-		<div class="welcome_card__image">
-			{{ content.field_image }}
+
+	{% if node.field_is_blog_list_.0.value == 0 %}
+
+		<div{{content_attributes.addClass('node__content').addClass('welcome_card')}}>
+			<div class="welcome_card__image">
+				{{ content.field_image }}
+			</div>
+
+			<div class="welcome_card__info">
+				{{ title_prefix }}
+				{% if label and not page %}
+					<h3{{title_attributes}}>
+						<a href="{{ url }}" rel="bookmark">{{ label }}</a>
+					</h3>
+				{% endif %}
+				{{ title_suffix }}
+
+				{{ content.body }}
+			</div>
 		</div>
+	{% endif %}
 
-		<div class="welcome_card__info">
-			{{ title_prefix }}
-			{% if label and not page %}
-				<h3{{title_attributes}}>
-					<a href="{{ url }}" rel="bookmark">{{ label }}</a>
-				</h3>
-			{% endif %}
-			{{ title_suffix }}
+	{% if node.field_is_blog_list_.0.value == 1 %}
+		<div class="blog_list">
+			<div class="blog_list__icon">
+				{{ content.field_icon_class.0 }}
+			</div>
+			<div class="blog_list__info">
+				{{ title_prefix }}
+				{% if label and not page %}
+					<h2{{title_attributes}}>
+						<a href="{{ url }}" rel="bookmark">{{ label }}</a>
+					</h2>
+				{% endif %}
+				{{ title_suffix }}
+				{{ summary|length > 100 ? summary|slice(0, 100) ~ '...' : summary }}
 
-			{{ content.body }}
+        {{ content.links }}
+			</div>
 		</div>
-	</div>
+	{% endif %}
 
 </article>

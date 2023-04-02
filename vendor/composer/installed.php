@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'drupal/recommended-project',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '73d81f8856c07b250ad5b22330fb511d8a140316',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -343,6 +343,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/fontawesome' => array(
+            'pretty_version' => '2.25.0',
+            'version' => '2.25.0.0',
+            'reference' => '8.x-2.25',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/fontawesome',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/paragraphs' => array(
             'pretty_version' => '1.15.0',
             'version' => '1.15.0.0',
@@ -353,9 +362,9 @@
             'dev_requirement' => false,
         ),
         'drupal/recommended-project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '73d81f8856c07b250ad5b22330fb511d8a140316',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

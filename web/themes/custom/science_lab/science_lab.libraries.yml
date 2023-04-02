@@ -5,8 +5,11 @@ global-style:
       https://fonts.googleapis.com/css?family=Roboto: { type: external }
       css/navbar.css: {}
       css/banner.css: {}
+      css/footer.css: {}
+      css/testimonials.css: {}
   js:
     js/banner.js: {}
+    js/testimonials.js: {}
     
   dependencies:
     - core/drupal
@@ -26,3 +29,7 @@ slick:
 custom-code-banner:
   js:
     js/banner.js: {}
+
+custom-code-testimonial:
+  js:
+    js/testimonials.js: {}

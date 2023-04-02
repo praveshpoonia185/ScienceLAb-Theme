@@ -18,3 +18,5 @@ regions:
   page_top: 'Page top'
   page_bottom: 'Page bottom'
   sidebar_first: 'First sidebar'
+  footer_top: 'Footer Top'
+  footer_bottom: 'Footer Bottom'

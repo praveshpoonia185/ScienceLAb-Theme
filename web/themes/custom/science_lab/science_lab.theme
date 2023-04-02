@@ -1,0 +1,17 @@
+<?php
+
+  use Drupal\file\Entity\File;
+
+  /**
+  * Implements hook_preprocess_HOOK() for menu.html.twig.
+  */
+  function science_lab_preprocess_page(&$variables) {
+
+      $variables['site_name'] = \Drupal::config('system.site')->get('name');
+  }
+
+
+
+
+
+
